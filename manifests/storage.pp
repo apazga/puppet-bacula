@@ -80,17 +80,17 @@ class bacula::storage(
     }
   }
 
-  if $db_package {
-    package { $db_package:
-      ensure => installed,
-    }
-  }
-
-  if $db_package == '' {
-    $real_db_package = undef
-  } else {
-    $real_db_package = 'Package[$db_package]'
-  }
+# if $db_package {
+#   package { $db_package:
+#     ensure => installed,
+#   }
+# }
+# 
+# if $db_package == '' {
+#   $real_db_package = undef
+# } else {
+#   $real_db_package = 'Package[$db_package]'
+# }
 
   file { '/etc/bacula/bacula-sd.conf':
     ensure  => file,
